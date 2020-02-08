@@ -9,6 +9,8 @@ setopt extendedglob
 
 # Enable emacs bindings.
 bindkey -e
+bindkey "^H" backward-kill-word # C-<Backspace>
+bindkey "^[[3;5~" kill-word # C-<Del>
 
 zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
