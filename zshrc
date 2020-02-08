@@ -30,8 +30,7 @@ antigen bundle command-not-found
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-syntax-highlighting
-
-antigen theme robbyrussell
+antigen bundle shrink-path
 
 antigen apply
 
@@ -39,3 +38,6 @@ antigen apply
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
+
+# Theme
+source $REPO/theme.zsh-theme
