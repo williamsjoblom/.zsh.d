@@ -1,8 +1,23 @@
 # -*- mode: sh -*-
+
+export CONF=jvmg
+export JDK="/home/wax/workbench/jdk/build/$CONF/jdk/bin/"
+export JDKPROD="/home/wax/workbench/jdk/build/product/jdk/bin/"
+
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+
+alias ccat="pygmentize -g -O style=colorful,linenos=1"
+alias ec="emacsclient"
+alias emas-restart="systemctl --user restart emacs"
+
 REPO=$( dirname $( realpath ${(%):-%N} ) ) # Configuration repo directory
+
+# histfile config
 HISTFILE=~/.histfile
-HISTSIZE=2048
-SAVEHIST=2048
+HISTSIZE=1048576
+SAVEHIST=$HISTSIZE
+setopt hist_ignore_app_dups
+setopt hist_ignore_space
 
 setopt autocd
 setopt extendedglob
@@ -43,3 +58,11 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 
 # Theme
 source $REPO/theme.zsh-theme
+
+# Kill completion
+zstyle ':completion:*:processes' command 'ps -ax'
+zstyle ':completion:*:processes-names' command 'ps -aeo comm='
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:*:killall:*:processes-names' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:*:killall:*' menu yes select
