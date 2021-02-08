@@ -16,7 +16,6 @@ REPO=$( dirname $( realpath ${(%):-%N} ) ) # Configuration repo directory
 HISTFILE=~/.histfile
 HISTSIZE=1048576
 SAVEHIST=$HISTSIZE
-setopt hist_ignore_app_dups
 setopt hist_ignore_space
 
 setopt autocd
