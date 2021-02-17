@@ -10,6 +10,9 @@ alias ccat="pygmentize -g -O style=colorful,linenos=1"
 alias ec="emacsclient"
 alias emacs-restart="systemctl --user restart emacs"
 
+alias cov2="python2 -m coverage"
+alias cov3="python3 -m coverage"
+
 REPO=$( dirname $( realpath ${(%):-%N} ) ) # Configuration repo directory
 
 # histfile config
