@@ -8,7 +8,7 @@ export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 
 alias ccat="pygmentize -g -O style=colorful,linenos=1"
 alias ec="emacsclient"
-alias emas-restart="systemctl --user restart emacs"
+alias emacs-restart="systemctl --user restart emacs"
 
 REPO=$( dirname $( realpath ${(%):-%N} ) ) # Configuration repo directory
 
