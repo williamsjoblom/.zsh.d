@@ -9,8 +9,11 @@ alias ccat="pygmentize -g -O style=colorful,linenos=1"
 alias ec="emacsclient"
 alias emacs-restart="systemctl --user restart emacs"
 
+# Python coverage:
 alias cov2="python2 -m coverage"
 alias cov3="python3 -m coverage"
+# Run python3 in development mode:
+alias python3dev="PYTHONMALLOC=debug PYTHONASYNCIODEBUG=1 python3 -W default -X faulthandler"
 
 REPO=$( dirname $( realpath ${(%):-%N} ) ) # Configuration repo directory
 
