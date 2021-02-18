@@ -1,9 +1,8 @@
 # -*- mode: sh -*-
 
-export CONF=jvmg
+export CONF=jvmg # OpenJDK build configuration
 export JDK="/home/wax/workbench/jdk/build/$CONF/jdk/bin/"
 export JDKPROD="/home/wax/workbench/jdk/build/product/jdk/bin/"
-
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 
 alias ccat="pygmentize -g -O style=colorful,linenos=1"
