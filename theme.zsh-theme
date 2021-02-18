@@ -1,7 +1,9 @@
 # -*- mode: sh -*-
 setopt prompt_subst
-PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
-PROMPT+=' %{$fg[cyan]%}$(shrink_path -f)%{$reset_color%} $(git_prompt_info)'
+PROMPT="[%D{%M:%S}] "
+PROMPT+="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"    # Arrow
+PROMPT+=' %{$fg[cyan]%}$(shrink_path -f)%{$reset_color%} ' # Path
+PROMPT+='$(git_prompt_info)'                               # Git
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
